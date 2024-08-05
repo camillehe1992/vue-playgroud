@@ -1,6 +1,6 @@
 <template lang="">
   <v-navigation-drawer permanent>
-    <template v-slot:prepend>
+    <template #prepend>
       <v-list-item
         lines="two"
         prepend-avatar="https://randomuser.me/api/portraits/women/81.jpg"
