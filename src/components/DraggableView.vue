@@ -4,7 +4,7 @@
       ref="el"
       v-model="list"
       :animation="150"
-      ghostClass="ghost"
+      ghost-class="ghost"
       class="flex w-full flex-col gap-2 p-4 h-300px"
     >
       <div
