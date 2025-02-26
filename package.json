@@ -17,6 +17,7 @@
     "vite-plugin-vuetify": "^2.0.4",
     "vue": "^3.4.31",
     "vue-draggable-plus": "^0.5.2",
+    "vue-router": "^4.5.0",
     "vuetify": "^3.6.14"
   },
   "devDependencies": {

@@ -1,15 +1,25 @@
-<script setup>
-import AppBar from "@/layout/AppBar.vue";
-import NavigationDrawer from "@/layout/NavigationDrawer.vue";
-import MainContent from "@/layout/MainContent.vue";
-</script>
-
 <template>
   <v-app>
     <AppBar />
-    <NavigationDrawer />
-    <MainContent />
+    <NavBar />
+    <v-main>
+      <router-view />
+    </v-main>
   </v-app>
 </template>
+
+<script>
+import AppBar from "@/layout/AppBar.vue";
+import NavBar from "@/layout/NavBar.vue";
+
+export default {
+  name: "App",
+  components: {
+    AppBar,
+    NavBar,
+  },
+  data() {},
+};
+</script>
 
 <style scoped></style>
