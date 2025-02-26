@@ -15,7 +15,7 @@
 
         <!-- Multi-Level Item -->
         <v-list-group v-else :value="isGroupActive(item)">
-          <template v-slot:activator="{ props }">
+          <template #activator="{ props }">
             <v-list-item
               v-bind="props"
               :prepend-icon="item.icon"
@@ -44,6 +44,14 @@ import { inject } from "vue";
 
 export default {
   name: "NavBar",
+  setup() {
+    // Inject the drawer state from the parent component
+    const drawer = inject("drawer");
+
+    return {
+      drawer,
+    };
+  },
   data() {
     return {
       isRail: false, // Controls whether the drawer is in rail mode (collapsed)
@@ -86,14 +94,6 @@ export default {
           ],
         },
       ],
-    };
-  },
-  setup() {
-    // Inject the drawer state from the parent component
-    const drawer = inject("drawer");
-
-    return {
-      drawer,
     };
   },
   methods: {
