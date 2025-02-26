@@ -14,7 +14,7 @@
         ></v-list-item>
 
         <!-- Multi-Level Item -->
-        <v-list-group v-else :value="isGroupActive(item)">
+        <v-list-group v-else v-model="item.isOpen">
           <template #activator="{ props }">
             <v-list-item
               v-bind="props"
@@ -64,6 +64,7 @@ export default {
         {
           name: "Dashboard",
           icon: "mdi-view-dashboard",
+          isOpen: false, // Manually control group expansion
           children: [
             {
               name: "Analytics",
@@ -80,6 +81,7 @@ export default {
         {
           name: "Settings",
           icon: "mdi-cog",
+          isOpen: false, // Manually control group expansion
           children: [
             {
               name: "Profile",

@@ -4,6 +4,7 @@
     <AppBar />
     <NavBar />
     <v-main>
+      <BreadcrumbsBar />
       <router-view />
     </v-main>
   </v-app>
@@ -13,12 +14,14 @@
 import { ref, provide } from "vue";
 import AppBar from "@/layout/AppBar.vue";
 import NavBar from "@/layout/NavBar.vue";
+import BreadcrumbsBar from "@/layout/BreadcrumbsBar.vue";
 
 export default {
   name: "App",
   components: {
     AppBar,
     NavBar,
+    BreadcrumbsBar,
   },
   setup() {
     const drawer = ref(true); // Shared state for the drawer
