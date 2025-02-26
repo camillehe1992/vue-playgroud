@@ -1,7 +1,8 @@
 <template lang="">
   <v-app-bar color="primary" app>
     <template #prepend>
-      <v-app-bar-nav-icon variant="text"></v-app-bar-nav-icon>
+      <!-- Toggle Button for the Drawer -->
+      <v-app-bar-nav-icon @click="toggleDrawer"></v-app-bar-nav-icon>
     </template>
 
     <v-app-bar-title><strong>Vue Playgroud</strong></v-app-bar-title>
@@ -18,8 +19,17 @@
   </v-app-bar>
 </template>
 <script>
+import { inject } from "vue";
 export default {
   name: "AppBar",
+  setup() {
+    // Inject the toggleDrawer function from the parent component
+    const toggleDrawer = inject("toggleDrawer");
+
+    return {
+      toggleDrawer,
+    };
+  },
 };
 </script>
 <style lang=""></style>

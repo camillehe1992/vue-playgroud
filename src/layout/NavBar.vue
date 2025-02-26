@@ -1,19 +1,5 @@
 <template>
   <v-navigation-drawer v-model="drawer" app :rail="isRail">
-    <!-- Rail Toggle Button -->
-    <v-list-item
-      v-if="isRail"
-      prepend-icon="mdi-chevron-right"
-      @click="toggleRail"
-    ></v-list-item>
-    <v-list-item
-      v-else
-      prepend-icon="mdi-chevron-left"
-      @click="toggleRail"
-    ></v-list-item>
-
-    <v-divider></v-divider>
-
     <!-- Navigation Links -->
     <v-list density="compact" nav>
       <template v-for="item in navItems" :key="item.name">
@@ -28,7 +14,7 @@
         ></v-list-item>
 
         <!-- Multi-Level Item -->
-        <v-list-group v-else v-model="item.isOpen">
+        <v-list-group v-else :value="isGroupActive(item)">
           <template v-slot:activator="{ props }">
             <v-list-item
               v-bind="props"
@@ -53,12 +39,13 @@
   </v-navigation-drawer>
 </template>
 
-<script>
+<script s>
+import { inject } from "vue";
+
 export default {
   name: "NavBar",
   data() {
     return {
-      drawer: true, // Controls the visibility of the navigation drawer
       isRail: false, // Controls whether the drawer is in rail mode (collapsed)
       navItems: [
         {
@@ -69,7 +56,6 @@ export default {
         {
           name: "Dashboard",
           icon: "mdi-view-dashboard",
-          isOpen: false, // Manually control group expansion
           children: [
             {
               name: "Analytics",
@@ -86,7 +72,6 @@ export default {
         {
           name: "Settings",
           icon: "mdi-cog",
-          isOpen: false, // Manually control group expansion
           children: [
             {
               name: "Profile",
@@ -101,6 +86,14 @@ export default {
           ],
         },
       ],
+    };
+  },
+  setup() {
+    // Inject the drawer state from the parent component
+    const drawer = inject("drawer");
+
+    return {
+      drawer,
     };
   },
   methods: {
