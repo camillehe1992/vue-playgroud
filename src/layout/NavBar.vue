@@ -6,19 +6,24 @@
     @click="rail = false"
     @update:rail="toggleRail"
   >
-    <!-- Rail Toggle Button -->
-    <v-list-item
-      v-if="isRail"
-      prepend-icon="mdi-chevron-right"
-      variant="text"
-      @click="toggleRail"
-    ></v-list-item>
-    <v-list-item
-      v-else
-      prepend-icon="mdi-chevron-left"
-      variant="text"
-      @click="toggleRail"
-    ></v-list-item>
+    <!-- Rail Toggle Button with Tooltip -->
+    <v-tooltip location="right">
+      <template v-slot:activator="{ props }">
+        <v-list-item
+          v-if="isRail"
+          prepend-icon="mdi-chevron-right"
+          @click="toggleRail"
+          v-bind="props"
+        ></v-list-item>
+        <v-list-item
+          v-else
+          prepend-icon="mdi-chevron-left"
+          @click="toggleRail"
+          v-bind="props"
+        ></v-list-item>
+      </template>
+      <span>{{ isRail ? "Expand" : "Collapse" }}</span>
+    </v-tooltip>
 
     <v-divider></v-divider>
 
@@ -31,6 +36,7 @@
         :prepend-icon="item.icon"
         :title="item.name"
         link
+        :active="isActive(item.path)"
       >
       </v-list-item>
     </v-list>
@@ -54,6 +60,10 @@ export default {
   methods: {
     toggleRail() {
       this.isRail = !this.isRail; // Toggle rail mode
+    },
+    isActive(path) {
+      // Check if the current route matches the item's path
+      return this.$route.path === path;
     },
   },
 };

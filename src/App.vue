@@ -18,7 +18,6 @@ export default {
     AppBar,
     NavBar,
   },
-  data() {},
 };
 </script>
 

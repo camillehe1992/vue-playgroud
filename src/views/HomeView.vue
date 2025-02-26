@@ -1,10 +1,8 @@
 <template lang="">
-  <v-main>
-    <v-container>
-      <h1>Home</h1>
-      <p>Welcome to the Home page!</p>
-    </v-container>
-  </v-main>
+  <div>
+    <h1>Home</h1>
+    <p>Welcome to the Home page!</p>
+  </div>
 </template>
 <script>
 export default {

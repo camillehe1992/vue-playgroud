@@ -21,8 +21,16 @@ const routes = [
     name: "Contact",
     component: ContactView,
   },
+  // Add a catch-all route at the end (optional)
+  {
+    path: "/:pathMatch(.*)*", // Matches any unmatched route
+    redirect: "/", // Redirect to home or a 404 page
+  },
 ];
-export const router = createRouter({
+
+const router = createRouter({
   history: createMemoryHistory(),
   routes,
 });
+
+export default router;
