@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <template v-slot:text>
+    <template #text>
       <v-text-field
         v-model="search"
         label="Search"

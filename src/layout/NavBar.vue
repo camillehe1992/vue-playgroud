@@ -1,5 +1,5 @@
 <template>
-  <v-navigation-drawer app v-model="drawer" :rail="isRail">
+  <v-navigation-drawer v-model="drawer" app :rail="isRail">
     <!-- Navigation Links -->
     <v-list density="compact" nav>
       <template v-for="item in navItems" :key="item.name">
