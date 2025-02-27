@@ -1,5 +1,5 @@
 <template lang="">
-  <v-app-bar color="primary" app>
+  <v-app-bar app dark color="#646cff">
     <template #prepend>
       <!-- Toggle Button for the Drawer -->
       <v-app-bar-nav-icon @click="toggleDrawer"></v-app-bar-nav-icon>

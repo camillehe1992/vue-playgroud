@@ -38,4 +38,8 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+.v-main {
+  background-color: #f2f3f3;
+}
+</style>

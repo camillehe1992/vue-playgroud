@@ -1,11 +1,9 @@
 <template>
-  <div class="breadcrumbs-container">
-    <v-breadcrumbs :items="breadcrumbItems">
-      <template #divider>
-        <v-icon>mdi-chevron-right</v-icon>
-      </template>
-    </v-breadcrumbs>
-  </div>
+  <v-breadcrumbs :items="breadcrumbItems">
+    <template #divider>
+      <v-icon>mdi-chevron-right</v-icon>
+    </template>
+  </v-breadcrumbs>
 </template>
 
 <script>
@@ -51,5 +49,8 @@ export default {
   display: flex;
   justify-content: flex-start; /* Align to the left */
   align-items: flex-start; /* Align to the top */
+  padding: 0px 15px;
+  padding-left: 0px;
+  margin-bottom: 10px;
 }
 </style>
