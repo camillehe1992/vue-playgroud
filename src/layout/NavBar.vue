@@ -1,5 +1,5 @@
 <template>
-  <v-navigation-drawer v-model="drawer" app :rail="isRail">
+  <v-navigation-drawer app v-model="drawer" :rail="isRail">
     <!-- Navigation Links -->
     <v-list density="compact" nav>
       <template v-for="item in navItems" :key="item.name">
@@ -117,7 +117,9 @@ export default {
 <style scoped>
 /* Custom styles for the navigation drawer */
 .v-navigation-drawer {
-  background-color: #f5f5f5; /* Light gray background */
+  background-color: white; /* Light gray background */
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .v-list-item--active {

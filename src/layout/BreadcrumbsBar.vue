@@ -47,7 +47,9 @@ export default {
 
 <style scoped>
 /* Custom styles for breadcrumbs */
-.breadcrumbs-container {
-  margin-left: 10px;
+.v-breadcrumbs {
+  display: flex;
+  justify-content: flex-start; /* Align to the left */
+  align-items: flex-start; /* Align to the top */
 }
 </style>

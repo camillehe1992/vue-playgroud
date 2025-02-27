@@ -38,6 +38,4 @@ export default {
 };
 </script>
 
-<style>
-/* Global styles */
-</style>
+<style></style>
