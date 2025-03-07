@@ -1,38 +1,37 @@
 <template>
-  <v-container class="pa-0" fluid>
+  <MainLayout :title="title">
     <v-row>
-      <v-rol class="pa-2">
-        <div class="text-h6 font-weight-bold">Home</div>
-      </v-rol>
-    </v-row>
-    <v-row>
-      <v-col class="pa-2">
-        <v-card>
-          <template #text>
-            <v-text-field
-              v-model="search"
-              label="Search"
-              prepend-inner-icon="mdi-magnify"
-              variant="outlined"
-              hide-details
-              single-line
-            ></v-text-field>
-          </template>
-          <v-data-table
-            :headers="headers"
-            :items="desserts"
-            :search="search"
-          ></v-data-table>
-        </v-card>
+      <v-col>
+        <template #text>
+          <v-text-field
+            v-model="search"
+            label="Search"
+            prepend-inner-icon="mdi-magnify"
+            variant="outlined"
+            hide-details
+            single-line
+          ></v-text-field>
+        </template>
+        <v-data-table
+          :headers="headers"
+          :items="desserts"
+          :search="search"
+        ></v-data-table>
       </v-col>
     </v-row>
-  </v-container>
+  </MainLayout>
 </template>
 <script>
+import MainLayout from "../layout/MainLayout.vue";
+
 export default {
   name: "HomeView",
+  components: {
+    MainLayout,
+  },
   data() {
     return {
+      title: "Home",
       search: "",
       headers: [
         {

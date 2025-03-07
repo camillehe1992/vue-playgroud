@@ -4,8 +4,12 @@
     <AppBar />
     <NavBar />
     <v-main>
-      <BreadcrumbsBar />
-      <router-view />
+      <v-card>
+        <!-- Common BreadcrumbsBar -->
+        <BreadcrumbsBar />
+        <!-- Dynamic Router View -->
+        <router-view />
+      </v-card>
     </v-main>
   </v-app>
 </template>
