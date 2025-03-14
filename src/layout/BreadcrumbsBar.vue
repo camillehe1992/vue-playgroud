@@ -1,9 +1,10 @@
 <template>
-  <v-breadcrumbs :items="breadcrumbItems">
+  <v-breadcrumbs v-if="breadcrumbItems.length" :items="breadcrumbItems">
     <template #divider>
       <v-icon>mdi-chevron-right</v-icon>
     </template>
   </v-breadcrumbs>
+  <v-divider></v-divider>
 </template>
 
 <script>
